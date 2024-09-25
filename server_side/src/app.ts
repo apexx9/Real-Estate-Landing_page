@@ -4,13 +4,16 @@ import bodyParser from 'body-parser';
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
+/*initialize express app */
 const app = express();
-const port = process.env.PORT || 3000; //this is keeping the port that the server will run on.
+/*initialize port */
+const port = process.env.PORT || 3000; 
+/*initialize static folder  */
 const __dirname = dirname(fileURLToPath(import.meta.url));
+/*initialize body parser */
 app.use(bodyParser.urlencoded({extended: true}));
 
-
-//middleware 
+/*middleware */
 const bodyHandler = (req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.log("Body handler middleware");
   next();
