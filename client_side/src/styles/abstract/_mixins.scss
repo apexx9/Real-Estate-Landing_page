@@ -1,0 +1,19 @@
+// Box Shadow mixin
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+// Flex Container mixin
+@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Text Ellipsis mixin
+@mixin text-ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

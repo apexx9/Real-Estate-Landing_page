@@ -1,0 +1,110 @@
+@use '../abstract/variables' as v;
+
+.service-section {
+  background: v.$secondary-b-color;
+  width: 100%;
+  height: max-content; // Make it full height for a proper section view
+
+  .service-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 110px;
+
+    h2 {
+      font-size: 40px;
+      font-weight: bold;
+      color: v.$text-b-color;
+      margin-bottom: 10px;
+
+      &.h-1 {
+        margin-bottom: 0; // Remove margin if not needed
+      }
+
+      &.h-2 {
+        margin: 0;
+      }
+
+      &.h-3 {
+        background: v.$gradient-background; // Assuming gradient background variable
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .h-2-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      hr {
+        width: 80px;
+        height: 2px;
+        background: v.$primary-w-color;
+        border: none; // Remove default border
+        margin: 0 10px 0 0; // Add space between hr and h2
+      }
+    }
+
+    .btn-wrapper {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px; // Add space between buttons
+
+      .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer;
+
+        &.primary-btn {
+          background: v.$gradient-background;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+
+        &.secondary-btn {
+          background: transparent;
+          color: #fff;
+          border: 1px solid v.$primary-w-color;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+  }
+
+  .links-section {
+    margin: 50px 0;
+
+    .h3 {
+      margin: 20px 0;
+      justify-self: center;
+      font-size: xx-large;
+      color: v.$text-b-color;
+      display: flex;
+      justify-content: space-between;
+
+      &.icon-class{
+        background: v.$primary-w-color;
+        justify-self: center;
+      }
+    }
+
+    .h3-4 {
+        padding-bottom: 20px;
+        border-bottom: 1px solid v.$primary-w-color;
+    }
+  }
+}
+
+
+.list:hover{
+  background: v.$gradient-background;
+}

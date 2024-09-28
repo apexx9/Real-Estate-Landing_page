@@ -27,6 +27,11 @@ app.post("/submit", (res,req) => {
   req.send("Hello Typescript")
 })
 
+/* 404 error handler */
+app.get('/', (req: express.Request,res: express.Response,next: express.NextFunction) => {
+  res.status(404).send("Hello Typescript")
+})
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import "./styles/main.scss";
+
+:root {
+  --margin: 0;
+  --padding: 0;
+  --bgcolor: #161513;
+  --primary-font-family: "Poppins", sans-serif; /* Use 'Poppins' as the primary font */
+  --secondary-font-family: "Bai Jamjuree", sans-serif;
+}
+
+body {
+  margin: var(--margin);
+  padding: var(--padding);
+  background: var(--bgcolor);
+  font-family: var(--primary-font-family); /* Apply Poppins to body */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--secondary-font-family);
+}
+
+p,
+a,
+button {
+  font-family: var(--primary-font-family);
+}

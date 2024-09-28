@@ -1,0 +1,23 @@
+// Colors
+$primary-b-color: #161513; // primary black
+$secondary-b-color: #1C1C22; // secondary black
+$text-b-color: #ffffff;
+
+$primary-w-color: #F0F2F5; // primary white
+$secondary-w-color: #ffffff; // secondary white
+$text-w-color: #000000;
+
+// Fonts
+$body-font: 'Open Sans', sans-serif;
+$heading-font: 'Roboto', sans-serif;
+
+// Spacing
+$spacing-unit: 1rem;
+
+
+// Gradient Variables
+// Variables for gradient colors
+$gradient-color1: rgb(23, 41, 77); // Dark blue
+$gradient-color2: rgb(243, 113, 154); // Pink
+$gradient-direction: 68.3deg;
+$gradient-background: linear-gradient($gradient-direction, $gradient-color1 6.3%, $gradient-color2 90.9%);

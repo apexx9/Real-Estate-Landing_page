@@ -1,0 +1,18 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins';
+
+.form {
+  label {
+    display: block;
+    margin-bottom: v.$spacing-unit / 2;
+    font-weight: bold;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: v.$spacing-unit;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,87 @@
+/* src/styles/components/_header.scss */
+@use '../abstract/variables' as v;
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: v.$primary-b-color; /* Example background color */
+
+  .header-container {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Add some padding */
+
+    .left-header {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+
+      .name-logo {
+        font-size: 1.5rem;
+        margin-right: 20px;
+        color: #000; /* Use a valid color, replace with the desired one */
+        text-align: left; /* Align text to the left */
+        padding: 10px 0; /* Add padding to increase height */
+        white-space: nowrap; /* Prevent text from wrapping */
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Space between links */
+
+        li {
+          list-style: none;
+
+          a {
+            text-decoration: none;
+            color: v.$text-b-color; /* Example text color */
+            font-family: v.$body-font;
+            font-weight: normal;
+
+            &:hover {
+              color: v.$secondary-w-color; /* Example hover color */
+            }
+          }
+        }
+      }
+    }
+
+    .right-header {
+      display: flex;
+      align-items: center;
+      gap: 20px; 
+
+      .button {
+        background-color: v.$primary-w-color;
+        border: none;
+        color: v.$text-w-color;
+        font-family: v.$body-font;
+        font-weight: normal;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background-color: darken(v.$primary-w-color, 10%); /* Darken the background color on hover */
+          color: v.$primary-b-color; /* Change text color on hover */
+          transform: scale(1.05); /* Slightly scale the button */
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Add an outline on focus */
+        }
+
+        &:active {
+          background-color: darken(v.$primary-w-color, 15%); /* Further darken the background on active */
+          transform: scale(0.95); /* Slightly shrink the button on click */
+        }
+      }
+    }
+  }
+}

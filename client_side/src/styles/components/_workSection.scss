@@ -1,0 +1,33 @@
+@use '../abstract/variables' as v;
+
+.work-section{
+    height: 100vh;
+    background: v.$primary-b-color;
+    margin: 50px 110px;
+
+    .works-head{
+        display: flex;
+        height: 160px;
+        justify-content: space-between;
+
+        .works-topic, .works-description{
+            color: v.$text-b-color;
+        }
+
+        .works-topic{
+            width: 20%;
+            font-size: xx-large;
+
+            .projects-text{
+                background: v.$gradient-background; // Assuming gradient background variable
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        .works-description{
+            width: 50%;
+        }
+    }
+}
