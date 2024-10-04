@@ -1,10 +1,11 @@
 import express from "express";
 import "dotenv/config";
 import bodyParser from "body-parser";
-import { dirname } from "path";
+import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import bodyHandler from "./middlewares/bodyHandler";
 import "./routes/blog";
+import router from "./routes/blog";
 
 /*initialize express app */
 const app = express();
@@ -25,12 +26,9 @@ app.get("/", (req, res) => {
 app.post("/submit", (res, req) => {
   req.send("Hello Typescript");
 });
-
 /* 404 error handler */
-app.get(
-  "/",
-  (req: express.Request, res: express.Response, next: express.NextFunction) => {
-    res.status(404).send("Hello Typescript");
+app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
+    res.status(404).send("404 not found");
   },
 );
 
@@ -40,6 +38,20 @@ app.listen(port, () => {
 
 
 /* blog */
+app.use("/blogs", router);
 
 
-app.use("/blogs", blogRouter);
+/*ejs */
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+
+// app.js
+const links = [ //this is for the navbar component since it requires links array.
+  { href: "/", text: "Home" },
+  { href: "about", text: "About" },
+];
+
+app.get("/", (req, res) => {   //the links array is passed to the index.ejs
+  res.render("index", { links: links });
+});

@@ -1,35 +1,26 @@
-import { Express,Request,Response } from "express";
-import expressAsyncHandler from "../../node_modules/express-async-handler/index";
+import { Request, Response } from "express";
+import asyncHandler from "express-async-handler";
+import { getUserFromDb } from "../services/userService"; // Assuming this function exists
+import CustomError from "../utils/CustomError";
 import "dotenv/config";
-
-/*async handler variable */
-const asyncHandler = expressAsyncHandler;
 
 /*Error status code from env file */
 const errorStatusCode = parseInt(process.env.ERROR_STATUS_CODE || "500");
 
 /*custom Error */
-class customError extends Error{
-    statusCode: number;
-    constructor(message: string, statusCode: number) {
-        super(message);
-        this.statusCode = errorStatusCode ;
-        this.name = "CustomError";
-    }
-}
+
 
 const blogController = asyncHandler(async (req: Request, res: Response) => {
-    const authorID = req.params?.Id;
+    const authorId = req.params.id;
 
     /*getting the user from the database */
-    const author = await getUserFromDb(authorID);
+    const author = await getUserFromDb(authorId);
 
     if(!author){
-        throw new customError("Author not found", 404);
-        // res.status(404).send("Author not found");
+        throw new CustomError("Author not found", 404);
     }
 
-    res.send(author);
+    res.json(author);
 });
 
 export default blogController;

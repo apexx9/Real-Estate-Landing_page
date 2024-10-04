@@ -18,7 +18,7 @@ router.delete("author/:id", blogController);
 
 
 
-
+export default router; // Exporting the router for use in other files
 
 
 
@@ -33,4 +33,6 @@ router.delete("author/:id", blogController);
 //     next:express.NextFunction)=>{
 //         res.send({data:"Blog Posts"})
 // });
+
+
 
